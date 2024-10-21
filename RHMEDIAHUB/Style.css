@@ -1,0 +1,153 @@
+  /* Estilos para la franja del encabezado */
+header {
+    background-color: #4779dd; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Para alinear elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre logo y navegación */
+    align-items: center; /* Alinear verticalmente en el centro */
+    font-family: Arial, sans-serif;
+}
+/* Estilo para la imagen del logo */
+header img {
+    height: 60px; /* Ajusta la altura del logo */
+}
+/* Opcional: estilo para los elementos de navegación */
+nav ul {
+    list-style-type: none; /* Eliminar viñetas */
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline; /* Mostrar elementos en línea */
+    margin: 0 15px; /* Espaciado entre los elementos */
+}
+nav ul li a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: bold; /* Texto en negrita */
+}
+/* diseño del pie de la pagina web  */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #42a5f5;
+    text-decoration: none;
+    margin: 0 10px;
+}
+s
+footer a:hover {
+    color: #1e88e5;
+}
+
+ /*===================================================================*/
+ /*Diseño de la opcion de sugerencias */    
+    #page1 header img {
+        max-width: 350px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    #page1 nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 100;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #page1 nav ul li {
+        margin: 0 15px;
+    }
+    
+    #page1 nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    #page1 nav ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Sección de sugerencias */
+    #page1 #sugerencias-section {
+        background-color: #fff;
+        padding: 40px;
+        max-width: 600px;
+        margin: 50px auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    
+    #page1 #sugerencias-section form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #page1 #sugerencias-section label {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    #page1 #sugerencias-section input, 
+    #page1 #sugerencias-section textarea {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    #page1 #sugerencias-section button {
+        padding: 10px 20px;
+        background-color: #2060ce;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    #page1 #sugerencias-section button:hover {
+        background-color: #074aad;
+    }
+    /* Diseño responsivo */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        header img {
+            max-width: 150px;
+        }
+    }
+    /*Aqui acaba el diseño de sugerencias*/
+/*===========================================================================*/
+
+
+    /*Diseño del editor de imagenes */
+    #page2 body {
+        margin: 20px;
+        font-family: Arial, sans-serif;
+    }
+    #page2 .preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    #page2 .preview img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    #page2 .preview-section {
+        margin-top: 20px;
+    }
