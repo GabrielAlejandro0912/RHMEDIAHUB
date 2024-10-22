@@ -54,7 +54,7 @@
                         img.src = e.target.result;
                         previewImages.appendChild(img);
 
-                        imageArray.push(e.target.result);
+                        imageArray.push(e.target.result);  // Guardamos la imagen en base64 en el array
                     };
                     reader.readAsDataURL(file);
                 }
@@ -71,6 +71,7 @@
         });
 
         document.getElementById("publish").addEventListener("click", function () {
+            // Redirige a index.html para ver el carrusel actualizado
             window.location.href = "index.html";
         });
     </script>

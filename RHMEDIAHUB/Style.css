@@ -29,6 +29,9 @@ nav ul li a {
     text-decoration: none; /* Eliminar subrayado */
     font-weight: bold; /* Texto en negrita */
 }
+
+
+
 /* diseño del pie de la pagina web  */
 footer {
     background-color: #333;
@@ -217,3 +220,138 @@ footer a:hover {
 }
 /* Diseño del editor de imagenes */
 /*===========================================================================*/
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #4779dd; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Para alinear elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre logo y navegación */
+    align-items: center; /* Alinear verticalmente en el centro */
+    font-family: Arial, sans-serif;
+}
+
+header img {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Mostrar elementos en línea */
+    margin: 0 15px; /* Espaciado entre los elementos */
+}
+
+nav ul li a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #000; /* Para asegurar que siempre haya un fondo */
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen sin estirarla */
+}
+
+/* Indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-indicators button {
+    background-color: #fff;
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 0.5;
+}
+
+.carousel-indicators button.active {
+    background-color: #003b75;
+    opacity: 1;
+}
+
+/* Controles prev/next */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #003b75;
+}
+
+/* Estilo del footer */
+footer {
+    background-color: #4779dd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
