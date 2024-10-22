@@ -2,53 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="Panasonic.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "Style.css">
+    <link rel="stylesheet" href="Style.css">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Panasonic</title>
-    <link rel="stylesheet" href="lightbox.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
- </head>
- <body>
+</head>
+<body>
     <header>
-        <!-- Aquí va el logo de Panasonic -->
         <img src="Panasonic_logo.png" alt="Logo Panasonic">
         <nav>
             <ul>
                 <li><a href="Editor.html">Editor</a></li>
                 <li><a href="Sugerencias.html">Sugerencias</a></li>
-                <li><a href="Galeria.html">Galeria</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
             </ul>
         </nav>
     </header>
- <!-- Sección de Carrusel de Imágenes -->
- <section class="container mt-5">
-    <h2 class="text-center mb-4">Galería de Imágenes</h2>
-    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="multimedia/imagen1.jpg" class="d-block w-100" alt="Imagen 1">
-            </div>
-            <div class="carousel-item">
-                <img src="multimedia/imagen2.jpg" class="d-block w-100" alt="Imagen 2">
-            </div>
-            <div class="carousel-item">
-                <img src="multimedia/imagen3.jpg" class="d-block w-100" alt="Imagen 3">
-            </div>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+            <div class="carousel-inner" id="carouselInner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
     </div>
-</section>
-    <footer>
-        <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
-    </footer>
+
+    <script>
+        // Cargar las imágenes desde el localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = JSON.parse(localStorage.getItem("carouselImages"));
+            const carouselInner = document.getElementById("carouselInner");
+            const carouselIndicators = document.getElementById("carouselIndicators");
+
+            if (images && images.length > 0) {
+                images.forEach((imageSrc, index) => {
+                    const carouselItem = document.createElement("div");
+                    carouselItem.classList.add("carousel-item");
+                    if (index === 0) {
+                        carouselItem.classList.add("active");
+                    }
+
+                    const img = document.createElement("img");
+                    img.src = imageSrc;
+                    img.classList.add("d-block", "w-100");
+                    carouselItem.appendChild(img);
+                    carouselInner.appendChild(carouselItem);
+
+                    const indicator = document.createElement("button");
+                    indicator.setAttribute("type", "button");
+                    indicator.setAttribute("data-bs-target", "#carouselExampleIndicators");
+                    indicator.setAttribute("data-bs-slide-to", index);
+                    if (index === 0) {
+                        indicator.classList.add("active");
+                        indicator.setAttribute("aria-current", "true");
+                    }
+                    indicator.setAttribute("aria-label", `Slide ${index + 1}`);
+                    carouselIndicators.appendChild(indicator);
+                });
+
+                // Configurar el carrusel para que se mueva automáticamente cada 3 segundos
+                const carousel = new bootstrap.Carousel('#carouselExampleIndicators', {
+                    interval: 3000,
+                    ride: 'carousel'
+                });
+            } else {
+                console.log("No hay imágenes almacenadas.");
+            }
+        });
+        
+    </script>
+
+<footer>
+    <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>
