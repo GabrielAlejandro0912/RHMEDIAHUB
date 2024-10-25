@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Panasonic</title>
+    <link rel="icon" href="Panasonic.png">
+</head>
+<body>
+    <header>
+        <img src="Panasonic_logo.png" alt="Logo Panasonic">
+        <nav>
+            <ul>
+                <li><a href="Editor.html">Editor</a></li>
+                <li><a href="Sugerencias.html">Sugerencias</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<style>
+    /* Estilo general para el carrusel */
+.carousel {
+    width:  1500px; /* Ajusta este valor para cambiar el ancho */
+    height: 1500px; /* Asegúrate de que la altura sea igual al ancho para hacerlo cuadrado */
+    margin: 0 auto; /* Centra el carrusel */
+}
+/* Asegura que las imágenes se ajusten al contenedor cuadrado */
+.carousel-item img {
+    width: 100%; /* La imagen se ajusta al ancho completo del contenedor */
+    height: 100%; /* La imagen se ajusta a la altura del contenedor */
+    object-fit: cover; /* Esto asegura que la imagen no se deforme y llene el espacio */
+}
+/* botones  */
+/* Estilo para centrar verticalmente los botones del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    top: 17%; /* Ubica los botones en el 50% de la altura del carrusel */
+    transform: translateY(-50%); /* Centra verticalmente */
+    width: 50px; /* Ajusta el tamaño de los botones si es necesario */
+    height: 50px;
+    opacity: 0.9; /* Hace los botones un poco transparentes */
+}
+/* Opcional: Puedes ajustar el tamaño del ícono dentro del botón si es necesario */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40%;
+    height: 40%;
+}
+</style>
+    <!-- Carrusel de imágenes -->
+    <div id="carouselcontainer" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselcontainer" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselcontainer" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselcontainer" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagen1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagen2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagen3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselcontainer" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselcontainer" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    
+
+
+
+
+<script>
+    // Array con las rutas de las imágenes locales
+    const images = [
+    'imagen1.jpg',
+    'imagen2.jpg',
+    'imagen3.jpg'
+    ];
+
+    // Función para generar el carrusel dinámicamente
+    function loadCarousel() {
+    const carouselContainer = document.getElementById('carouselContainer');
+
+    // Estructura básica del carrusel
+    let carouselHTML = `
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+    `;
+
+    // Generar indicadores
+    images.forEach((_, index) => {
+        carouselHTML += `
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" ${index === 0 ? 'class="active" aria-current="true"' : ''} aria-label="Slide ${index + 1}"></button>
+        `;
+    });
+
+    carouselHTML += `</div><div class="carousel-inner">`;
+
+    // Generar los items del carrusel
+    images.forEach((image, index) => {
+        carouselHTML += `
+            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                <img src="${image}" class="d-block w-100" alt="Imagen ${index + 1}">
+            </div>
+        `;
+    });
+
+    // Agregar los botones de control
+    carouselHTML += `
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>`;
+
+    // Insertar el carrusel en el contenedor
+    carouselContainer.innerHTML = carouselHTML;
+  }
+    // Llamar a la función para cargar el carrusel cuando se cargue la página
+    window.onload = loadCarousel;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Galería de Imágenes Subidas</h2>
+        <div class="row" id="gallery">
+            <!-- Las imágenes se añadirán dinámicamente aquí -->
+        </div>
+    </div>
+
+    <script src="Galeria.html"></script>
+
+
+    <script>
+const gallery = document.getElementById('gallery');
+
+// Cargar las imágenes desde el localStorage
+window.onload = function() {
+    const storedImages = localStorage.getItem('uploadedImages');
+    if (storedImages) {
+        const images = JSON.parse(storedImages);
+
+        images.forEach(imageSrc => {
+            const colDiv = document.createElement('div');
+            colDiv.classList.add('col-md-4', 'mb-4');
+
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.classList.add('img-fluid', 'rounded');
+            colDiv.appendChild(img);
+
+            gallery.appendChild(colDiv);
+        });
+    }
+};
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>

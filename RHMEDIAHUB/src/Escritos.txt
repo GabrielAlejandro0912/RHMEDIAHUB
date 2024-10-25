@@ -1,0 +1,28 @@
+
+Editor: este apartado no tiene nada dado que todo lo que eh programado no funciona
+        como yo pensaba el editor debia estar listo esta semana pero decidi borrar
+        todo y comenzar de nuevo 
+
+Galeria:  
+        hasta el momento no tengo una idea de ese apartado lo que hace ahora 
+        es guardar imagenes que se estan agregando
+
+Index: el index no tiene imagenes agregadas dado que no eh podido hacer que el editor 
+        Agregue las imagenes y se muestren en el Index 
+        necesito hacer que abajo del carrusel tengo un buscador de imagenes
+        por el momento no hay nada de eso programado sobre eso
+
+Prueba: ese html solo lo so para probar codigo y despues lo agrego al lo que quiero
+        solo eso
+
+Sugerencias: Esta ventanaesta completa solamente en diseño pero en funcionabilidad 
+
+Script: Tengo mas HTML que Script echo no hay nada mas que decir 
+
+Style: hay diseños que no se estan utilizando como el del editor 
+       el diseño que tiene el index tiene que ser igual que en todas las pantallas 
+       
+
+
+
+
