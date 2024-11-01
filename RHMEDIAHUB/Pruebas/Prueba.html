@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Imágenes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="script" href="Script.js">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Subir Imágenes</h2>
+        <div class="form-group">
+            <input type="file" id="imageUpload" class="form-control-file" accept="image/*" multiple>
+        </div>
+
+        <!-- Botón para mostrar las imágenes en la galería -->
+        <a href="galeria.html" target="_blank" class="btn btn-primary mt-3">Ver Galería</a>
+
+        <h2 class="text-center mt-5">Carrusel de Imágenes</h2>
+        <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="carouselInner">
+                <!-- Las imágenes se añadirán dinámicamente aquí -->
+            </div>
+            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="carrusel.js"></script>
+    
+    <script>  // Referencia al input de subida de imágenes
+        const imageUpload = document.getElementById('imageUpload');
+        const carouselInner = document.getElementById('carouselInner');
+        
+        // Array para almacenar las imágenes subidas
+        let uploadedImages = [];
+        
+        // Evento que se dispara al subir imágenes
+        imageUpload.addEventListener('change', (event) => {
+            const files = event.target.files;
+            
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const imageUrl = e.target.result;
+        
+                    // Añadimos la imagen al array
+                    uploadedImages.push(imageUrl);
+        
+                    // Actualizamos el carrusel
+                    updateCarousel();
+                    
+                    // Guardamos las imágenes en localStorage
+                    localStorage.setItem('uploadedImages', JSON.stringify(uploadedImages));
+                };
+        
+                reader.readAsDataURL(files[i]);
+            }
+        });
+        
+        // Función para actualizar el carrusel con las imágenes subidas
+        function updateCarousel() {
+            carouselInner.innerHTML = ''; // Limpiar el carrusel
+        
+            uploadedImages.forEach((imageSrc, index) => {
+                const carouselItem = document.createElement('div');
+                carouselItem.classList.add('carousel-item');
+                if (index === 0) carouselItem.classList.add('active'); // Hacer la primera imagen activa
+        
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.classList.add('d-block', 'w-100');
+                carouselItem.appendChild(img);
+        
+                carouselInner.appendChild(carouselItem);
+            });
+        }
+        
+        // Cargar las imágenes desde el localStorage al cargar la página
+        window.onload = function() {
+            const storedImages = localStorage.getItem('uploadedImages');
+            if (storedImages) {
+                uploadedImages = JSON.parse(storedImages);
+                updateCarousel();
+            }
+        };
+        </script>
+
+
+</body>
+</html>

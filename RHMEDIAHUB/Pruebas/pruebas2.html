@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panasonic</title>
+    <link rel="stylesheet" href="StylePrueba.css">
+    <link rel="icon" href="Panasonic.png">
+</head>
+
+<body>
+    <header>
+        <img src="Panasonic_logo.png" alt="Logo Panasonic">
+    </header>
+    <div class="carousel">
+        <div class="carousel-images">
+            <!-- Las imágenes cargadas aparecerán aquí -->
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="addImages(event)">
+    <button onclick="document.getElementById('imageInput').click()">Agregar Imágenes</button>
+    <script src="script.js"></script>
+
+    <main> <div class="carousel">
+        <div class="carousel-images">
+            
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="addImages(event)">
+    <button onclick="document.getElementById('imageInput').click()">Agregar Imágenes</button>
+    <script src="script.js"></script> </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>

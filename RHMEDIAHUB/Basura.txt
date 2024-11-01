@@ -1,0 +1,83 @@
+header {
+    background-color: #4779dd; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Para alinear elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre logo y navegación */
+    align-items: center; /* Alinear verticalmente en el centro */
+    font-family: Arial, sans-serif;
+}
+/* Estilo para la imagen del logo */
+header img {
+    height: 60px; /* Ajusta la altura del logo */
+}
+/* Opcional: estilo para los elementos de navegación */
+nav ul {
+    list-style-type: none; /* Eliminar viñetas */
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline; /* Mostrar elementos en línea */
+    margin: 0 15px; /* Espaciado entre los elementos */
+}
+nav ul li a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Eliminar subrayado */
+    font-weight: bold; /* Texto en negrita */
+}
+body {
+    display: grid;
+    min-height: 50dvh;
+    grid-template-rows:
+        auto 1fr auto;
+}
+.carousel {
+    align-items: center;    
+    position: center;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.carousel-images img {
+    display: none;
+    width: 100%;
+}
+
+.carousel-images img.active {
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer {
+    background-color:#4779dd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
