@@ -10,15 +10,22 @@
     <link rel="icon" href="Panasonic.png">
 </head>
 <body>
-    <div class="container mt-5">
+    <header>
+        <img src="Panasonic_logo.png" alt="Logo Panasonic">
         <h2 class="text-center">Galería de Imágenes Subidas</h2>
+        <nav>
+            <ul>
+                <li><a href="Inicio.html">Regresar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container mt-5">
         <div class="row" id="gallery">
             <!-- Las imágenes se añadirán dinámicamente aquí -->
         </div>
     </div>
     <script>
         const gallery = document.getElementById('gallery');
-    
         // Cargar las imágenes desde el localStorage
         window.onload = function() {
             const storedImages = localStorage.getItem('galleryImages'); // Clave unificada
@@ -28,12 +35,11 @@
                 images.forEach(imageSrc => {
                     const colDiv = document.createElement('div');
                     colDiv.classList.add('col-md-4', 'mb-4');
-    
+                    localStorage.setItem("galleryImages", JSON.stringify(images)); //se supone que sube imagenes al html de galeria
                     const img = document.createElement('img');
                     img.src = imageSrc;
                     img.classList.add('img-fluid', 'rounded');
                     colDiv.appendChild(img);
-    
                     gallery.appendChild(colDiv);
                 });
             }
@@ -42,10 +48,5 @@
     <footer>
         <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
     </footer>
-    
-   
-
-
-
 </body>
 </html>
