@@ -1,0 +1,101 @@
+/*diseño del editor */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.button-column h2 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #333;
+}
+   
+.button-column button {
+    background-color: #418dcc;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 150px;
+}
+
+.preview-container {
+    flex-grow: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.preview-container h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.preview-image {
+    width: 500px;
+    height: 450px;
+    object-fit: cover;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px #00000033;
+    margin: 5px;  
+}
+/* fin del diseño */
+
+
+
+
+
+/* Estilos para los botones con efecto de pulsación */
+.pulse-effect {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #007bff; /* Color base del botón */
+    transition: transform 0.3s ease-in-out; /* Transición suave del efecto de pulsación */
+  }
+  
+  .pulse-effect:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el cursor sobre el botón */
+  }
+  
+  .pulse-effect:active {
+    transform: scale(0.90); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  
+
+      
