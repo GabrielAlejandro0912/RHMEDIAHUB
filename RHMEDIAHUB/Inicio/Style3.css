@@ -1,68 +1,286 @@
-/*diseño del editor */
-.container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-.button-column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+div#General {
+    width: auto;
+    height: 1000px;
+    background-color: rgb(254, 254, 254);
 }
 
-.button-column h2 {
-    margin-bottom: 15px;
-    font-size: 1.2em;
-    color: #333;
+div#Header {
+
+    /* Estilo para la imagen del logo */
+    header {
+        background-color: #4779dd;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        width: 100%;
+
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    /* Opcional: estilo para los elementos de navegación */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
 }
-   
-.button-column button {
-    background-color: #418dcc;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-    width: 150px;
+
+div#Body {
+    Body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*Carrusel*/
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        height: 100px;
+    }
+
+    main {
+        flex: 1;
+        display: contents;
+        align-items: none;
+        justify-content: none;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 200%;
+        height: -200px;
+        /* Cambia esto a 100% o auto para evitar el desbordamiento */
+        max-width: 600px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-block-end: 80px;
+        /* Centra el carrusel horizontalmente */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-images img {
+        display: center;
+        width: 100%;
+        border-radius: -1px;
+    }
+
+    /* Botones de navegación del carrusel */
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
 
-.preview-container {
-    flex-grow: 1;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
+/* Pie de página */
+/* Estilos del footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* style de */
+
+
+div#Header1 {
+
+    /* Estilo para la imagen del logo */
+    header {
+        background-color: #4779dd;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        width: 98%;
+    }
+
+    header img {
+        height: 50px;
+    }
 }
 
-.preview-container h3 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 15px;
+div#Body1 {
+    Body {
+        display: grid;
+        flex-direction: column;
+        align-items: center;
+        /*Carrusel*/
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        height: 100px;
+    }
+
+    main {
+        flex: 1;
+        display: contents;
+        align-items: none;
+        justify-content: none;
+    }
+
+    .container {
+        display: flex;
+        gap: 100px;
+        padding: 200px;
+
+    }
+
+    .button-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-column h2 {
+        margin-bottom: 15px;
+        font-size: 1.2em;
+        color: #333;
+    }
+
+    .button-column button {
+        background-color: #418dcc;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        width: 150px;
+    }
+
+    .preview-container {
+        flex-grow: 0.999;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .preview-container h3 {
+        text-align: center;
+
+        margin-bottom: 45px;
+    }
+
+    .preview-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .preview-image {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px #00000033;
+        margin: 5px;
+    }
+
+    /* fin del diseño */
+
+
 }
 
-.preview-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+div#footer1 {
+    footer {
+        background-color: #4779dd;
+        color: white;
+        text-align: center;
+        padding: 50px;
+        width: 100%;
+        margin-top: 5px;
+    }
+
 }
-
-.preview-image {
-    width: 500px;
-    height: 450px;
-    object-fit: cover;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px #00000033;
-    margin: 5px;  
-}
-/* fin del diseño */
-
-
-
-
 
 /* Estilos para los botones con efecto de pulsación */
 .pulse-effect {
@@ -71,31 +289,18 @@
     padding: 14px 28px;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #007bff; /* Color base del botón */
-    transition: transform 0.3s ease-in-out; /* Transición suave del efecto de pulsación */
-  }
-  
-  .pulse-effect:hover {
-    background-color: #0056b3; /* Cambia el color al pasar el cursor sobre el botón */
-  }
-  
-  .pulse-effect:active {
-    transform: scale(0.90); /* Reduce ligeramente el tamaño del botón cuando se hace clic */
-  }
-  
+    background-color: #007bff;
+    /* Color base del botón */
+    transition: transform 0.3s ease-in-out;
+    /* Transición suave del efecto de pulsación */
+}
 
+.pulse-effect:hover {
+    background-color: #0056b3;
+    /* Cambia el color al pasar el cursor sobre el botón */
+}
 
-
-
-
-
-
-
-
-
-
-
-      
-  
-
-      
+.pulse-effect:active {
+    transform: scale(0.90);
+    /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}

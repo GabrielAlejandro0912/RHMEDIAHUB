@@ -10,46 +10,72 @@
     <link rel="icon" href="Panasonic.png">
 </head>
 <body>
-   <header>
-    <img src="Panasonic_logo.png" alt="Logo Panasonic">
-    <h2 class="text-center">Galería de Imágenes Subidas</h2>
-    <nav>
-        <ul>
-            <li><a href="Inicio.html">Regresar</a></li>
-        </ul>
-    </nav>
-</header>
-
-    <main>
-    <div class="container mt-5">
-        <div class="row" id="gallery">
-            <!-- Las imágenes se añadirán dinámicamente aquí -->
+    <body>
+        <div class="container mt-5">
+            <h2 class="text-center">Galería de Imágenes Subidas</h2>
+            
+            <div class="row" id="gallery">
+                <!-- Las imágenes se añadirán dinámicamente aquí -->
+            </div>
         </div>
-    </div>
-    <script>
-        window.onload = function() {
-            const storedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+    
+        <script>
             const gallery = document.getElementById('gallery');
-            storedImages.forEach(imageSrc => {
-                const colDiv = document.createElement('div');
-                colDiv.classList.add('col-md-4', 'mb-4');
-                const img = document.createElement('img');
-                img.src = imageSrc;
-                img.classList.add('img-fluid', 'rounded');
-                colDiv.appendChild(img);
-                gallery.appendChild(colDiv);
-            });
-        };
-    </script>
-    </main>
-
-
+        
+            function loadImages() {
+                gallery.innerHTML = ""; // Limpiar la galería
+                const storedImages = localStorage.getItem('galleryImages');
+                if (storedImages) {
+                    const images = JSON.parse(storedImages);
+        
+                    images.forEach(image => {
+                        const colDiv = document.createElement('div');
+                        colDiv.classList.add('col-md-4', 'mb-4', 'image-container');
+        
+                        const img = document.createElement('img');
+                        img.src = image.url;
+                        img.classList.add('img-fluid', 'rounded');
+                        img.alt = image.name;
+                        img.dataset.id = image.id;
+        
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = "Eliminar";
+                        deleteBtn.classList.add('btn', 'btn-danger', 'mt-2');
+                        deleteBtn.onclick = function() {
+                            deleteImage(image.id);
+                        };
+        
+                        colDiv.appendChild(img);
+                        colDiv.appendChild(deleteBtn);
+                        gallery.appendChild(colDiv);
+                    });
+                }
+            }
+        
+            function deleteImage(imageId) {
+                const storedImages = JSON.parse(localStorage.getItem('galleryImages')) || [];
+                const updatedImages = storedImages.filter(image => image.id !== imageId);
+                localStorage.setItem('galleryImages', JSON.stringify(updatedImages)); // Actualizar `localStorage`
+                loadImages();
+            }
+        
+            window.onload = loadImages;
+        </script>
+        
+    
+        <style>
+            /* Opcional: Estilos para mejorar la apariencia */
+            .image-container {
+                position: relative;
+                text-align: center;
+            }
+            
+            .btn-danger {
+                width: 100%;
+            }
+        </style>
+    </body>
     
 
-
-
-    <footer>
-        <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
