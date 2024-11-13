@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    
 }
 
 div#General {
@@ -49,6 +50,7 @@ div#Header {
 
 div#Body {
     Body {
+        
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -188,6 +190,8 @@ div#Header1 {
 }
 
 div#Body1 {
+    
+
     Body {
         display: grid;
         flex-direction: column;
@@ -222,6 +226,7 @@ div#Body1 {
         margin-bottom: 15px;
         font-size: 1.2em;
         color: #333;
+
     }
 
     .button-column button {
@@ -275,12 +280,25 @@ div#footer1 {
         background-color: #4779dd;
         color: white;
         text-align: center;
-        padding: 50px;
+        padding: 40px;
+        padding-top: 59px;
         width: 100%;
-        margin-top: 5px;
+        margin-top: 300px;
+        /* margen superior */
     }
-
 }
+
+footer {
+    background-color: #4779dd;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    padding-top: 59px;
+
+    margin-top: 155px;
+    /* margen superior */
+}
+
 
 /* Estilos para los botones con efecto de pulsación */
 .pulse-effect {
