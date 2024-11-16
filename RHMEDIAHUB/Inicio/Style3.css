@@ -6,8 +6,9 @@
 
 div#General {
     width: auto;
-    height: 1000px;
-    background-color: rgb(254, 254, 254);
+    
+    height: 1450px;
+    background-color: hsl(0, 0%, 90%);
 }
 
 div#Header {
@@ -120,8 +121,38 @@ div#Body {
     }
 }
 
-/* Pie de página */
-/* Estilos del footer */
+
+
+    /* Galeria */
+     /* Estilo para la imagen del logo */
+     header {
+        background-color: #4779dd;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        width: 100%;
+    }
+    header img {
+        height: 50px;
+    }
+    /* Opcional: Estilos para mejorar la apariencia */
+    .image-container {
+        position: relative;
+        text-align: center;
+    }
+    .btn-danger {
+        width: 100%;
+    }
+
+
+
+
+
+
+
 
 
 
