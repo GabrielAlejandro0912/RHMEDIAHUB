@@ -1,0 +1,153 @@
+-Inicio- HTML CSS SCRIPT
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║ Este codigo implementa una funcionalidad para gestionar un carrusel y una galeria de         ║
+║ imagenes con busqueda y sincronizacion en tiempo real usando LocalStorage.                   ║
+║ CarouselInner: Representa el contenedor donde se cargaran las imagenes del carrusel.         ║
+║ SearchCarouselInput: Representa el campo de busqueda para filtrar imagenes                   ║
+║ PreviewGallery: Representa el contenedor donde se mostraran las imagnes filtradas            ║
+║ en la vista previa.                                                                          ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║ Funcion para cargar imagenes en el carrusel:                                                 ╚═══════════════════════╗
+║                                                                                                                      ║
+║       function loadCarouselImages() {                                                                                ║
+║    carouselInner.innerHTML = ""; // Limpia el carrusel                                                               ║
+║    const storedImages = localStorage.getItem("carouselImages");                                                      ║
+║     if (storedImages) {                                                                                              ║
+║         const images = JSON.parse(storedImages); // Recupera imágenes almacenadas                                    ║
+║         images.forEach((image, index) => {                                                                           ║
+║             const div = document.createElement("div");                                                               ║
+║             div.className = "carousel-item" + (index === 0 ? " active" : ""); // Marca la primera como activa        ║
+║             const img = document.createElement("img");                                                               ║
+║             img.className = "d-block w-100"; // Estilo Bootstrap para imágenes del carrusel                          ║
+║             img.src = image.url; // Asigna la URL de la imagen                                                       ║
+║             div.appendChild(img);                                                                                    ║
+║             carouselInner.appendChild(div); // Añade al carrusel                                                     ║
+║         });                                                                                                          ║
+║     }                                                                                                                ║
+║ }                                                                                                                    ║     
+║                                                                                                                      ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+║
+║ ° Proposito: Cargar dinamicamente las imagenes en el carrusel desde localStorage.
+║   La primera imagen se marca como activa. 
+║
+║  
+║   Funcion para cargar imagenes en la vista precia filtrada:
+║
+║    function loadPreviewImages(filter) {
+║        previewGallery.innerHTML = ""; // Limpia la vista previa
+║        const storedImages = localStorage.getItem("carouselImages");
+║        if (storedImages) {
+║            const images = JSON.parse(storedImages);
+║            images.forEach(image => {
+║                if (image.name.toLowerCase().includes(filter.toLowerCase())) { // Aplica el filtro
+║                    const colDiv = document.createElement('div');
+║                    colDiv.classList.add('col-md-4', 'mb-4'); // Estilo Bootstrap
+║                    const img = document.createElement('img');
+║                    img.src = image.url; // Asigna la URL
+║                    img.classList.add('img-fluid', 'rounded'); // Clase para formato y diseño
+║                    colDiv.appendChild(img);
+║                    previewGallery.appendChild(colDiv); // Añade la imagen filtrada a la vista previa
+║                }
+║            });
+║        }
+║    }
+║
+║    ° Proposito: Muestra una galeria de imagenes basadose en el filtro aplicando(por
+║     nombre). Si no hay filtro, se muestran todas las imagenes. 
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║
+║   Eventos asociados:
+║   
+║   1.- Cargar Imágenes al cargar la página:
+║
+║            document.addEventListener("DOMContentLoaded", loadPreviewImages);
+║            document.addEventListener("DOMContentLoaded", function () {
+║        loadCarouselImages();
+║    });
+║   
+║   ° Al cargar la página, se ejecutan las funciones para mostrar las imágenes 
+║       tanto en el carrusel como en la galería de vista previa.
+║
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║
+║   2.- Filtra imágenes según el texto de entrada:
+║   
+║      searchCarouselInput.addEventListener("input", function () {
+║        loadPreviewImages(this.value);
+║    });
+║
+║   ° Filtra las imágenes de la galería en tiempo real según el texto ingresado en el campo de búsqueda.
+║
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+║   
+║   3.- Sincronizar cambios en localStorage: 
+║       
+║      window.addEventListener("storage", function (event) {
+║        if (event.key === "galleryImages") {
+║          loadPreviewImages(); // Recargar vista previa si hay cambios
+║        }
+║   });
+║   
+║   ° Si otro proceso modifica LocalStorage (por ejemplo, en otra pestaña), la galeria se sincroniza automáticamente.
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+║
+║   ° Función para eliminar todas las imágenes:
+║   
+║      function clearimages() {
+║        localStorage.removeItem("carouselImages"); // Borra las imágenes
+║       alert("Todas las imágenes del editor han sido eliminadas.");
+║       document.getElementById("previewGrid").innerHTML = ""; // Limpia la vista
+║   }
+║       
+║    ° Propositos: Borra todas las imagenes almacenadas en localStorage y limpia la
+║        galeria de vista previa.
+║
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+║
+║       Uso de LocalStorage:
+║       localStorage.getitem("carouselImages"): Recupera las imagenes 
+║       almacenadas.
+║
+║       localStorage.setItem("carouselImages", JSON.stringify(images))(no incluido, pero se usaria para guardar imagenes).
+║
+║       Cada imagen almacenada en localStorage parece ser un objeto con propiedades
+║       como url y name, por ejemplo:
+║
+║      [
+║       { "url": "image1.jpg", "name": "Image 1" },
+║       { "url": "image2.jpg", "name": "Image 2" }
+║      ]
+║
+║   
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+║
+║   Flujo general:
+║   
+║   1.- Las imágenes se almacenan en localStorage como un arreglo JSON. 
+║   2.- Al cargar la pagina:
+║      ° Se cargan las imágenes al carrusel.  
+║      ° Se cargan las imagenes ala galeria de vista previa.
+║    3.- El usuario puede buscar imagenes por nombre usando el campo de busqueda.
+║    4.- Si se detectan cambios en localStorage, la galeria se actualiza  automáticamente
+║    5.- Se puede eliminar todas las imagenes con la funcion clearimages.
+║
+║
+║
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+║═ ╚ ╣ ╗ ╣ ╬ ╦ ╠ ╩ ╝

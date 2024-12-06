@@ -1,0 +1,166 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+div#General {
+    width: -50px;
+    height: flex;
+    
+    background-color: hsl(0, 23%, 92%);
+
+}
+
+Header {
+    /* Estilo para la imagen del logo */
+    header {
+        background-color: #0041c0;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        width: 100%;
+
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    /* Opcional: estilo para los elementos de navegación */
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+div#Body {
+    Body {        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*Carrusel*/
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        height: 100px;
+    }
+
+    main {
+        flex: 1;
+        display: contents;
+        align-items: none;
+        justify-content: none;
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 200%;
+        height: -200px;
+        /* Cambia esto a 100% o auto para evitar el desbordamiento */
+        max-width: 600px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-block-end: 80px;
+        /* Centra el carrusel horizontalmente */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-images img {
+        display: center;
+        width: 100%;
+        border-radius: -1px;
+    }
+
+    /* Botones de navegación del carrusel */
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Galeria */
+/* Estilo para la imagen del logo */
+header {
+    background-color: #0041c0;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+header img {
+    height: 50px;
+}
+
+/* Opcional: Estilos para mejorar la apariencia */
+.image-container {
+    position: relative;
+    text-align: center;
+    width: 1000px;
+}
+
+.btn-danger {
+    width: 100%;
+}
+
+
+
+
+
+footer {
+    background-color: #0041c0;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    padding-top: 59px;
+    
+    
+    
+    margin-top: 140px;
+    /* margen superior */
+}

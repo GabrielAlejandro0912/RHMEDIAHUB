@@ -1,0 +1,110 @@
+
+
+Body {
+    background-color: #ffffff;
+    flex-direction: column;
+    /*Carrusel*/
+    min-height: flex;
+    display: flex;
+
+
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 90px;
+    background-color: #ffffff;
+    margin: flex;
+    margin: 110px;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.gallery-image:hover {
+    transform: scale(2.05);
+    transition: transform 0.3s ease;
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
+}
+
+footer {
+    background-color: #0041c0;
+    color: white;
+    text-align: center;
+    padding: flex;
+    padding-top: 10px;
+    
+    
+    /* margen superior */
+}
+
+
+header {
+    background-color: #0041c0;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    width: flex;
+}
+
+header img {
+    height: 50px;
+}
+
+/* Opcional: Estilos para mejorar la apariencia */
+.image-container {
+    position: relative;
+    text-align: center;
+}
+
+.btn-danger {
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}

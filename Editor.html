@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Panasonic.png">
+    <title>Panasonic</title>
+    <link rel="stylesheet" href="Editor.css">
+    
+</head>
+
+<body>
+    <div id="General">
+        <div id="Header">
+            <header>
+                <img src="Panasonic_logo.png" alt="Logo Panasonic">
+                
+            </header>
+        </div>
+        <div id="Body">
+            <main>
+                <div class="container">
+                    <div class="button-column">
+                        <h2>Subir Imágenes</h2>
+                        <input type="file" id="imageUploader" accept="image/*" multiple onchange="showPreview()"
+                            style="display: none;">
+                        <button class="btn pulse-effect"
+                            onclick="document.getElementById('imageUploader').click()">Agregar</button>
+
+                        <button class="btn pulse-effect" onclick="saveimages()">Guardar Imágenes</button>
+                        <button class="btn pulse-effect" onclick="window.location.href='Index.html'">Regresar</button>
+                    </div>
+                    <div class="preview-container">
+                        <h3>VISTA PREVIA</h3>
+                        <div id="previewGrid" class="preview-grid"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="footer">
+            <footer>
+                <p>&copy; 2024 Panasonic Industrial Devices Mexicana, S.A. De C.V. Todos los derechos reservados.</p>
+            </footer>
+
+        </div>
+    </div>
+    <script src="Editor.js"></script>
+</body>
+
+</html>
