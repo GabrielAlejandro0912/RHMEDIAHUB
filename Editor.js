@@ -1,3 +1,4 @@
+
 function showPreview() {
     const previewGrid = document.getElementById("previewGrid");
     previewGrid.innerHTML = ""; // Limpiar vista previa anterior

@@ -1,13 +1,12 @@
 // Requerir las dependencias necesarias
+
 const express = require('express');
+const path = require("path");
+const app = express();
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
-const path = require("path");
 // Configurar la aplicación Express
-const app = express();
 const port = 3001;
-
-
 // Configurar Body Parser para manejar datos POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -31,29 +30,16 @@ db.connect((err) => {
 
 
 
-
-
-
-
 //Muestra los html
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/Sugerencias.html" ));
+    res.sendFile(path.join(__dirname + "/Index.html"));
+    //res.sendFile("C:/Users/isdintern/Desktop/RHMEDIAHUB/Index.html")
 });
-
-
-
-
-
-
-
 
 
 // Ruta para manejar el formulario de sugerencias
 app.post('/guardar-sugerencia', (req, res) => {
     const { empleadoNum, nombreCompleto, comentarios } = req.body;
-    
-
-
     // Validar los datos
     if (!empleadoNum || !nombreCompleto || !comentarios) {
         return res.status(400).send('Todos los campos son obligatorios.');
@@ -82,15 +68,37 @@ app.get('/ver-sugerencias', (req, res) => {
     });
 });
 
+
+///////////////////////////////////////////////////////////////////////////
+//Index 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Iniciar el servidor
 app.listen(port, () => {
     console.log(`Servidor ejecutándose en http://localhost:3001${port}`);
 });
-
-
-
-
-
-
-
 

@@ -1,39 +1,3 @@
-// Requerir las dependencias necesarias
-const express = require('express');
-const mysql = require('mysql2');
-const bodyParser = require('body-parser');
-const path = require("path");
-// Configurar la aplicación Express
-const app = express();
-const port = 3001;
-// Configurar Body Parser para manejar datos POST
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Configuración de la conexión a la base de datos
-const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: '1234',
-    database: 'sugerencias'
-});
-// Conectar a la base de datos
-db.connect((err) => {
-    if (err) {
-        console.error('Error al conectar a la base de datos:', err);
-        return;
-    }
-    console.log('Conectado a la base de datos MySQL');
-});
-
-//Muestra los html
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + "/Index.html"));
-});
-
-
-
-
 const carouselInner = document.getElementById("carouselInner");
 const searchCarouselInput = document.getElementById("searchCarouselInput");
 const previewGallery = document.getElementById("previewGallery");
@@ -51,9 +15,9 @@ function loadCarouselImages() {
             img.src = image.url;
             div.appendChild(img);
             carouselInner.appendChild(div);
-        });
-    }
-}
+        }); 
+    } 
+} 
 // Función para cargar la vista previa de las imágenes filtradas
 function loadPreviewImages(filter) {
     previewGallery.innerHTML = ""; // Limpiar vista previa
@@ -89,13 +53,9 @@ window.addEventListener("storage", function (event) {
         loadPreviewImages(); // Recargar la vista previa si se detectan cambios
     }
 });
+
 function clearimages() {
     localStorage.removeItem("carouselImages");
     alert("Todas las imágenes del editor han sido eliminadas.");
     document.getElementById("previewGrid").innerHTML = "";
 }
-
-
-
-
-

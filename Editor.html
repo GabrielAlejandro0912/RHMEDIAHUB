@@ -46,6 +46,164 @@
         </div>
     </div>
     <script src="Editor.js"></script>
+
+
+    <style>
+        div#Header {
+    /* Estilo para la imagen del logo */
+    header {
+        background-color: #0041c0;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        width: flex;
+    }
+
+    header img {
+        height: 60 px;
+    }
+}
+
+
+div#Body {
+    Body {
+        display: grid;
+        flex-direction: column; 
+        align-items: center;
+        /*Carrusel*/
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        
+    }
+
+    main {
+        flex: 1;
+        display: contents;
+        align-items: none;
+        justify-content: none;
+    }
+
+    .container {
+        display: flex;
+        gap: 100px;
+        padding: 200px;
+
+    }
+
+    .button-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-column h2 {
+        margin-bottom: 15px;
+        font-size: 1.2em;
+        color: #333;
+
+    }
+
+    .button-column button {
+        background-color: #418dcc;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+        width: 150px;
+    }
+
+    .preview-container {
+        flex-grow: 0.999;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .preview-container h3 {
+        text-align: center;
+
+        margin-bottom: 45px;
+    }
+
+    .preview-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .preview-image {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px #00000033;
+        margin: 5px;
+    }
+
+    /* fin del diseño */
+
+
+}
+
+div#footer {
+    footer {
+        width: flex;
+        color: white;
+        text-align: center;
+        padding: 40px;
+        padding-top: 59px;
+    
+        margin-top: 300px;
+        /* margen superior */
+    }
+
+    footer {
+        background-color: #0041c0;
+        color: white;
+        text-align: center;
+        padding: 40px;
+        
+        
+        margin-top: 155px;
+        /* margen superior */
+    }
+
+}
+
+
+
+/* Estilos para los botones con efecto de pulsación */
+.pulse-effect {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #007bff;
+    /* Color base del botón */
+    transition: transform 0.3s ease-in-out;
+    /* Transición suave del efecto de pulsación */
+}
+
+.pulse-effect:hover {
+    background-color: #0056b3;
+    /* Cambia el color al pasar el cursor sobre el botón */
+}
+
+.pulse-effect:active {
+    transform: scale(0.90);
+    /* Reduce ligeramente el tamaño del botón cuando se hace clic */
+}
+    </style>
+
+
 </body>
 
 </html>
